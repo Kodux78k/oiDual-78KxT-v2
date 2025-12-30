@@ -135,13 +135,13 @@
     }
     #chat-container.collapsed { opacity: 0; pointer-events: none; }
 
-    .msg-block { max-width: 88%; padding: 12px 16px; border-radius: 12px; position: relative; animation: slideIn 0.3s ease-out; line-height: 1.5; font-size: 0.95rem; word-wrap: break-word; }
+    .msg-block { max-width: 98%; padding: 12px 16px; border-radius: 12px; position: relative; animation: slideIn 0.3s ease-out; line-height: 1.5; font-size: 0.78rem; word-wrap: break-word; }
     .msg-block.user { align-self: flex-end; background: rgba(0,245,255,0.08); border-right: 2px solid var(--primary); text-align: right; }
     .msg-block.ai { align-self: flex-start; background: rgba(255,255,255,0.05); border-left: 2px solid var(--secondary); }
     .msg-block.system { align-self: center; font-size: 0.75rem; opacity: 0.8; text-align: center; border: 1px dashed rgba(255,255,255,0.2); background: transparent; padding: 6px 12px; font-style: italic; }
     
     pre { position: relative; background: rgba(0,0,0,0.4); border-radius: 8px; margin: 10px 0; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
-    code { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+    code { font-family: 'JetBrains Mono', monospace; font-size: 0.45rem; }
     .copy-code-btn { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--primary); font-size: 0.7rem; padding: 4px 8px; border-radius: 4px; cursor: pointer; z-index: 10; opacity: 0.7; transition: 0.2s; }
     .copy-code-btn:hover { opacity: 1; background: var(--primary); color: #000; }
     @keyframes slideIn { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
@@ -353,7 +353,7 @@
             </div>
             <div class="cockpit-item">
                 <div class="cockpit-label">Modelo de IA (Engine)</div>
-                <input type="text" id="inputModel" class="cockpit-input" placeholder="google/gemini-2.0-flash-exp">
+                <input type="text" id="inputModel" class="cockpit-input" placeholder="openai/gpt-oss-20b:free">
             </div>
             <div class="cockpit-item">
                 <div class="cockpit-label">Background Visual</div>
@@ -435,7 +435,7 @@ const App = {
         document.getElementById('apiKeyInput').value = s.getItem(STORAGE.API_KEY) || '';
         document.getElementById('systemRoleInput').value = s.getItem(STORAGE.SYSTEM_ROLE) || 'Você é Dual';
         
-        const savedUser = s.getItem(STORAGE.USER_ID) || 'Viajante';
+        const savedUser = s.getItem(STORAGE.USER_ID) || 'Viajante Δ';
         document.getElementById('inputUserId').value = savedUser;
         document.getElementById('inputModel').value = s.getItem(STORAGE.MODEL) || 'openai/gpt-oss-20b:free';
 
